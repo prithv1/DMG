@@ -1,0 +1,52 @@
+# High-level job related parameters
+HJOB:
+  RANDOM_SEED: 123
+  PHASE: "multihead_training"
+  JOB_STRING: "test_mh"
+
+# Dataset related parameters
+DATA:
+  DATASET: "PACS"
+  DOMAIN_LIST: "art_painting,cartoon,photo"
+  TARGET_DOMAINS: "sketch"
+  DATA_SPLIT_DIR: "data/PACS/"
+  HEAD_MODE: "multi"
+
+CKPT:
+  STORAGE_DIR: "../DMG/"
+
+# Model related parameters
+MODEL:
+  BASE_MODEL: "alexnet"
+  PARAM_INIT: "custom"
+  USE_PRETRAINED: True
+  SPLIT_LAYER: "classifier.6"
+  TRAIN_FORWARD_MODE: "route"
+  EVAL_FORWARD_MODE: "route"
+  NUM_CLASSES: 7
+
+# Dataloader related parameters
+DATALOADER:
+  BATCH_SIZE: 64
+  DATA_SAMPLING_MODE: "uniform"
+
+# Optimizer related parameters
+OPTIM:
+  OPTIMIZER: "Adam"
+  LEARNING_RATE: 1e-4
+  LEARNING_RATE_SCHEDULER: "exp"
+  LEARNING_RATE_DECAY_RATE: 0.99
+  LEARNING_RATE_DECAY_MODE: "epoch"
+  LEARNING_RATE_DECAY_STEP: 1
+  WEIGHT_DECAY: 1e-5
+
+# Epoch / Iteration related parameters
+EP_IT:
+  MAX_EPOCHS: 100
+  LOG_INTERVAL: 50
+  CKPT_STORE_INTERVAL: 2
+
+# Process related parameters
+PROCESS:
+  USE_GPU: True
+  NUM_WORKERS: 6

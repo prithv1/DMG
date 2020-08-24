@@ -1,0 +1,57 @@
+# High-level job related parameters
+HJOB:
+  RANDOM_SEED: 123
+  PHASE: "supermask_training"
+  JOB_STRING: "test_supermask"
+
+# Dataset related parameters
+DATA:
+  DATASET: "PACS"
+  DOMAIN_LIST: "art_painting,cartoon,photo"
+  TARGET_DOMAINS: "sketch"
+  DATA_SPLIT_DIR: "data/PACS/"
+  
+CKPT:
+  STORAGE_DIR: "../DMG/"
+
+# Model related parameters
+MODEL:
+  BASE_MODEL: "alexnet"
+  PARAM_INIT: "standard"
+  USE_PRETRAINED: True
+  NUM_CLASSES: 7
+  MASK_LAYERS: "classifier.1,classifier.4,classifier.6"
+  POLICY_SAMPLE_MODE: "sample"
+  POLICY_CONV_MODE: False
+  MASK_INIT_SETTING: "random_uniform"
+  MASK_INIT_SCALAR: 1.0
+
+# Dataloader related parameters
+DATALOADER:
+  BATCH_SIZE: 64
+  DATA_SAMPLING_MODE: "uniform"
+
+# Optimizer related parameters
+OPTIM:
+  OPTIMIZER: "Adam"
+  MODEL_LEARNING_RATE: 1e-4
+  POLICY_LEARNING_RATE: 1e-4
+  LEARNING_RATE_SCHEDULER: "exp"
+  LEARNING_RATE_DECAY_RATE: 0.99
+  LEARNING_RATE_DECAY_MODE: "epoch"
+  LEARNING_RATE_DECAY_STEP: 1
+  MODEL_WEIGHT_DECAY: 1e-5
+  POLICY_WEIGHT_DECAY: 1e-5
+  SPARSITY_LAMBDA: 0.0
+  OVERLAP_LAMBDA: 0.1
+  
+# Epoch / Iteration related parameters
+EP_IT:
+  MAX_EPOCHS: 150
+  LOG_INTERVAL: 50
+  CKPT_STORE_INTERVAL: 2
+  
+# Process related parameters
+PROCESS:
+  USE_GPU: True
+  NUM_WORKERS: 6
