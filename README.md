@@ -37,7 +37,7 @@ conda activate dmg
 
 ## Usage
 
-### Download preprocessed data
+### Download and setup data
 
 To download the associated datasets (PACS and DomainNet), execute the following:  
 
