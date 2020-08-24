@@ -15,8 +15,8 @@ Table of Contents
 
    * [Setup and Dependencies](#setup-and-dependencies)
    * [Usage](#usage)
-      * [Logging](#logging)
       * [Download and setup data](#download-and-setup-data)
+      * [Logging](#logging)
       * [Training](#training)
    * [Reference](#reference)
 
